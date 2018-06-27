@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <body>
+        <div id="all">
+            {{ partial "header.html" . }}
+            <div id="wrap">
+                <div>
+                    {{ range .Paginator.Pages }}
+                    <article class="article">
+                        {{ partial "contents_header.html" . }}
+                        <div class="contents">
+                            {{ .Content | truncate 100 }}<br>
+                            <a href="{{ .Permalink }}">read more</a>
+                        </div>
+                    </article>
+                    {{ end }}
+                    {{ template "_internal/pagination.html" . }}
+                </div>
+                    {{ partial "r-sidebar.html" . }}
+            </div>
+            {{ partial "footer.html" . }}
+        </div>
+    </body>
+</html>

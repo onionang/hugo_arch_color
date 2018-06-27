@@ -1,0 +1,9 @@
+<div class="titlebar">
+    <h1 class="article_title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <ul class="tags">
+        {{ range .Params.tags }}
+        <li class="tag"><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+    </ul>
+    <span class="datetime">{{ .Date.Format "2006-01-02" }}</span>
+</div>

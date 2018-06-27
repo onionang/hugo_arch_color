@@ -1,0 +1,20 @@
+<header id="header">
+    <ul id="nav">
+        <li class="active"><a href="{{ $.Site.BaseURL }}">onionang</a></li>
+        {{ if eq .Permalink (add .Site.BaseURL "") }}
+        <li class="active"><a href="{{ $.Site.BaseURL }}">HOME</a></li>
+        {{ else }}
+        <li><a href="{{ $.Site.BaseURL }}">HOME</a></li>
+        {{ end }}
+        {{ if eq .Permalink (add .Site.BaseURL "tags/") }}
+        <li class="active"><a href="{{ $.Site.BaseURL }}tags">tags</a></li>
+        {{ else }}
+        <li><a href="{{ $.Site.BaseURL }}tags">tags</a></li>
+        {{ end }}
+        {{ if eq .Permalink (add .Site.BaseURL "post/about/") }}
+        <li class="active"><a href="{{ $.Site.BaseURL }}post/about">about</a></li>
+        {{ else }}
+        <li><a href="{{ $.Site.BaseURL }}post/about">about</a></li>
+        {{ end }}
+    </ul>
+</header>

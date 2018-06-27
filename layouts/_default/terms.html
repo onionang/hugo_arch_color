@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <body>
+        <div id="all">
+            {{ partial "header.html" . }}
+            <div id="wrap">
+                <div id="contents">
+                    <article class="article">
+                        <div class="titlebar">
+                            <h1 class="article_title">tags</h1>
+                        </div>
+                        <div class="contents">
+                            <ul class="tags">
+                                {{ range $key, $value := .Data.Terms }}
+                                <li><a href="{{ $key | urlize }}">{{ $key }}</a></li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                {{ partial "r-sidebar.html" . }}
+            </div>
+            {{ partial "footer.html" . }}
+        </div>
+    </body>
+</html>
+<div>
+</div>
